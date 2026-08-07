@@ -5,10 +5,10 @@ publishDate: 'May 23 2026'
 isFeatured: true
 seo:
   image:
-    src: '../../assets/images/project-3.jpg'
+    src: '../../assets/images/project-3-0.jpg'
 ---
 
-![Project preview](../../assets/images/project-3.jpg)
+![Project preview](../../assets/images/project-3-0.jpg)
 
 **Project Overview:**
 This project consists of a distributed Java-based web application designed to manage the lifecycle of virtual machines (Instances) and private subnets (Networks) within a Data Center (CPD). Developed with a professional approach, the architecture embraces microservices patterns, asynchronous communication, and scalable deployment strategies.

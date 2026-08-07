@@ -5,10 +5,10 @@ publishDate: 'May 28 2025'
 isFeatured: true
 seo:
   image:
-    src: '../../assets/images/project-5.jpg'
+    src: '../../assets/images/project-5-0.png'
 ---
 
-![Project preview](../../assets/images/project-5.jpg)
+![Project preview](../../assets/images/project-5.png)
 
 **Project Overview:**
 This project involved re-architecting a single-player prototype ("Zombfection", inspired by classic infection mods like *Zombie Panic!*) into a fully functional, authoritative multiplayer game. Developed in Unity using Netcode for GameObjects (NGO), the project focused on robust network architecture, state synchronization, and advanced multiplayer mechanics.

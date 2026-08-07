@@ -4,10 +4,10 @@ description: A comprehensive data engineering project encompassing relational da
 publishDate: 'May 28 2026'
 seo:
   image:
-    src: '../../assets/images/project-4.jpg'
+    src: '../../assets/images/project-4-0.jpg'
 ---
 
-![Project preview](../../assets/images/project-4.jpg)
+![Project preview](../../assets/images/project-4-0.jpg)
 
 **Project Overview:**
 This extensive data engineering project simulates a real-world telemetry and progression data ecosystem for a multiplayer video game. Developed in three iterative phases, the project demonstrates the complete lifecycle of data management: starting from a foundational Relational Database (SQL), transitioning into hierarchical data serialization (XML/XSD), and culminating in a full migration to NoSQL Document (MongoDB) and Graph (Neo4j) architectures.

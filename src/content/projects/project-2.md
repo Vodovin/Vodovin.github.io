@@ -5,11 +5,11 @@ publishDate: 'Oct 2 2023'
 isFeatured: true
 seo:
   image:
-    src: '../../assets/images/project-2.jpg'
+    src: '../../assets/images/project-2-0.jpg'
     alt: Project preview
 ---
 
-![Project preview](../../assets/images/project-2.jpg)
+![Project preview](../../assets/images/project-2-0.jpg)
 
 **Project Overview:**
 This project consists of modifying an initial version of a minikernel to include new functionalities and add multiprogramming capabilities.
