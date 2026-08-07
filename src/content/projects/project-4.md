@@ -1,7 +1,7 @@
 ---
-title: 'NeuralPlaylist - AI Generated Music Recommendations'
-description: Leveraging advanced algorithms and machine learning, NeuralPlaylist crafts personalized music recommendations based on users' preferences, moods, and even biometric data.
-publishDate: 'Oct 19 2023'
+title: 'End-to-End Data Pipeline: Relational, XML & NoSQL Ecosystems'
+description: A comprehensive data engineering project encompassing relational database design, hierarchical data validation (XML/XSD), and migration to NoSQL (MongoDB) and Graph (Neo4j) databases for advanced telemetry analytics.
+publishDate: 'May 28 2026'
 seo:
   image:
     src: '../../assets/images/project-4.jpg'
@@ -9,53 +9,38 @@ seo:
 
 ![Project preview](../../assets/images/project-4.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
-
 **Project Overview:**
-NeuralPlaylist is a cutting-edge web application that redefines music discovery through the power of artificial intelligence. Leveraging advanced algorithms and machine learning, NeuralPlaylist crafts personalized music recommendations based on users' preferences, moods, and even biometric data.
+This extensive data engineering project simulates a real-world telemetry and progression data ecosystem for a multiplayer video game. Developed in three iterative phases, the project demonstrates the complete lifecycle of data management: starting from a foundational Relational Database (SQL), transitioning into hierarchical data serialization (XML/XSD), and culminating in a full migration to NoSQL Document (MongoDB) and Graph (Neo4j) architectures.
 
-## Objectives
+## Design Objectives
 
-1. Develop an intuitive and user-friendly web application that utilizes AI to curate personalized music playlists for users.
-2. Implement machine learning models that analyze user behavior, preferences, and physiological responses to create dynamic and context-aware music recommendations.
-3. Provide an immersive and interactive platform that enhances the music listening experience and introduces users to new genres and artists.
+1. **Relational Foundation:** Establish a robust, normalized Entity-Relationship (ER) model capable of storing players, characters, matches, and progression data.
+2. **Data Serialization & Validation:** Extract relational data into JSON and transform it into strictly formatted XML documents, enforcing data integrity through custom XSD schemas.
+3. **NoSQL Migration & Optimization:** Migrate the dataset to MongoDB to leverage document-based horizontal scalability, optimizing complex queries through strategic indexing and execution profiling.
+4. **Graph Analytics:** Utilize Neo4j to model deeply interconnected N:M relationships (e.g., players, matches, and characters) to perform advanced behavioral analytics using Cypher.
 
-## Features
+## Phase 1: Relational Database Design (SQLite)
+   * **Data Modeling:** Designed the conceptual, logical, and physical ER diagrams using Redgate Data Modeler to structure 12 interconnected tables (including Players, Brawlers, Clubs, and Matches).
+   * **Automated Data Population:** Developed a Python script utilizing the `sqlite3` and `Faker` libraries to generate and insert massive amounts of randomized, semantically correct data into the SQLite database to simulate a production environment.
+   * **SQL Analytics:** Authored complex SQL queries utilizing `JOIN`, `GROUP BY`, and aggregation functions to extract game balancing metrics, such as the highest win-rate characters and top-performing clubs.
 
-1. **Biometric Mood Analysis:**
+## Phase 2: Hierarchical Data & Validation (XML)
+   * **ETL Pipeline:** Extracted relational data via SQL-to-JSON queries, then processed and reformatted the JSON outputs into well-formed XML documents using Python scripting and Regex.
+   * **Strict Schema Validation:** Authored custom XSD (XML Schema Definition) files to validate the generated XMLs. This included creating custom data types, such as regular expressions for strict DateTime formatting (`YYYY-MM-DD HH:MM:SS`) and character rarity enumerations.
+   * **XQuery Extraction:** Implemented XQuery scripts with FLWOR expressions to query the hierarchical data, enabling grouped and filtered analytical outputs natively from the XML files.
 
-- NeuralPlaylist incorporates biometric data analysis to understand users' moods and emotional states.
-- The AI algorithms use facial recognition and heart rate data to curate playlists that match users' current emotional states.
-
-2. **Personalized Playlists:**
-
-- Users receive dynamic and highly personalized playlists based on their music history, preferences, and contextual factors.
-- NeuralPlaylist adapts to users' evolving tastes, introducing them to new genres and artists that align with their musical journey.
-
-3. **Context-Aware Recommendations:**
-
-- The application takes into account contextual factors such as time of day, weather, and location to tailor music recommendations.
-- Users receive playlists suited for specific occasions, moods, and environments.
-
-4. **Collaborative Playlists:**
-
-- NeuralPlaylist encourages social interaction by allowing users to create and share collaborative playlists with friends.
-- Friends can contribute to the playlist, creating a shared musical experience that adapts to the collective preferences of the group.
-
-5. **Real-Time Feedback Integration:**
-
-- Users can provide real-time feedback on song selections, allowing the AI to continuously refine recommendations.
-- The system learns from user interactions to enhance the accuracy of future music suggestions.
+## Phase 3: NoSQL & Graph Analytics (MongoDB & Neo4j)
+   * **MongoDB Aggregation & Indexing:** 
+     * Redesigned the schema to fit a document-oriented approach, embedding array structures (e.g., `Progreso_Brawler` inside `Jugadores`) to minimize costly join operations.
+     * Utilized the MongoDB Aggregation Framework (`$unwind`, `$group`, `$project`, `$match`) to recreate complex analytics natively.
+     * Implemented single and compound indexes, verifying their performance impact by analyzing `explain("executionStats")` to drastically reduce `COLLSCAN` operations and `totalDocsExamined`.
+   * **Neo4j & Cypher Traversals:**
+     * Remodeled the domain as a Graph, creating intermediate nodes (`Participacion en partida`) to accurately resolve ternary relationships between Matches, Players, and Characters.
+     * Authored advanced Cypher queries requiring up to 6 node hops to uncover deep behavioral patterns, such as identifying scenarios where a player was defeated by an opponent using their "main" character.
 
 ## Technology Stack
 
-- Frontend: Vue.js for a dynamic and responsive user interface.
-- Backend: Flask for handling server-side logic and API integration.
-- Database: MongoDB for efficient storage and retrieval of user and music data.
-- AI Integration: PyTorch for developing machine learning models for music recommendation and biometric analysis.
-
-## Outcome
-
-NeuralPlaylist has redefined the music listening experience by harnessing the power of AI to provide users with hyper-personalized and context-aware playlists. The application not only adapts to users' musical preferences but also introduces them to new and exciting musical journeys based on their emotions and surroundings.
-
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+- **Databases:** SQLite (Relational), MongoDB (Document NoSQL), Neo4j (Graph).
+- **Data Serialization & Querying:** XML, XSD, XQuery, JSON.
+- **Database Languages:** SQL, MongoDB Aggregation Pipeline, Cypher.
+- **Tooling & Scripting:** Python (ETL scripting), Redgate Data Modeler, Regex.

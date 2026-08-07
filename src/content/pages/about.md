@@ -12,32 +12,32 @@ seo:
 
 **Note!:** This about page is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
 
-## Ethan Donovan - Web Developer based in Estonia
+## Aitor Alarcón - Software & Engine Programmer
 
-**Greetings!** I'm Ethan Donovan, a passionate web developer residing in the picturesque landscapes of [Estonia](https://en.wikipedia.org/wiki/Estonia). With a keen eye for design and a love for crafting seamless digital experiences, I bring a unique blend of creativity and technical expertise to the world of web development.
+**Greetings!** I'm Aitor Alarcón, a developer and engineer residing in Spain, driven by perseverance and a deep passion for deciphering the true language of computing. As a final-year student pursuing a Double Degree in Computer Engineering and Video Game Design and Development, I combine the technical rigor of low-level programming with the creativity of interactive development to build innovative solutions.
 
 ## Skills and Expertise
 
-I specialize in front-end and back-end development, utilizing the latest technologies to build responsive and user-friendly websites. My proficiency includes **HTML**, **CSS**, **JavaScript**, and frameworks such as **Astro.js** for dynamic and interactive user interfaces. On the server side, I'm well-versed in Node.js and have experience with database management systems like MongoDB.
+I specialize in low-level programming, system architecture, and engine development. My proficiency spans languages such as **C/C++**, **C#**, **Java**, and **Python**, frequently working on performance analysis and optimization. I have a solid background in parallel computing (**OpenMP**, **GPU environments**), operating systems development, and distributed backend architectures, utilizing tools like **Docker Compose** and polyglot databases (**MongoDB**, **Neo4j**, **SQLite**).
 
 ## Innovation and Problem-Solving
 
-I thrive on solving complex problems and transforming ideas into functional, elegant websites. Whether it's optimizing performance, implementing new features, or troubleshooting issues, I approach each challenge with enthusiasm and a commitment to delivering high-quality solutions.
+I thrive on pushing hardware and software to their physical limits. Currently, I am applying my expertise in parallel computing to a research project focused on Continuous Collision Detection (CCD) within Unity. Whether it is implementing process scheduling and synchronization algorithms for an OS kernel (Minikernel), developing a UNIX command interpreter (MiniShell), or structuring the persistence layer of a server cluster, I approach each challenge as an opportunity to innovate and push my own technical boundaries.
 
-## Global Perspective, Local Impact
+## Community and Creativity
 
-Living in Estonia has not only influenced my appreciation for nature and culture but has also shaped my approach to web development. I understand the importance of creating digital solutions that resonate with local audiences while maintaining a global perspective.
+I view development not just as pure code, but as a collaborative and creative endeavor. My recurring participation in Game Jams and Hackathons has taught me to adapt quickly, taking on gameplay programming and technical asset creation roles under pressure. Furthermore, my work as a Technical Artist creating optimized textures for 3D environments.
 
 ## Continuous Learning
 
-The dynamic nature of the tech industry inspires me to stay up-to-date with the latest trends and advancements. I'm always eager to expand my skill set and embrace emerging technologies that enhance the functionality and aesthetics of the websites I create.
+Computing is a path of endless self-discovery. My growth mindset drives me to never settle for merely using a tool, but to truly understand how it functions and communicates from its core. I am constantly searching for new architectures, design patterns, and paradigms to build systems that are more robust, scalable, and efficient.
 
 ## Collaboration and Communication
 
-I believe in the power of collaboration and effective communication. Whether working with clients, designers, or fellow developers, I value clear communication to ensure the success of every project.
+I firmly believe in the synergy of teamwork. Efficiency, leadership, adaptability, and responsibility are foundational to my work ethic. I value clear and structured communication to align technical vision with overall project objectives, ensuring success in both low-level developments and distributed applications.
 
 ## Get in Touch
 
-Are you looking to elevate your online presence or bring your digital ideas to life? I'd love to hear from you! Feel free to reach out for collaboration, consultation, or just a friendly chat about all things web development.
+Are you looking to maximize your systems' performance or build robust next-generation architectures? I'd love to connect with you! Feel free to reach out via a.alarorte.dragonborn@gmail.com or my LinkedIn profile for collaboration, consultation, or just a friendly chat about the fascinating world of low-level development and video games.
 
 _Let's build something amazing together!_

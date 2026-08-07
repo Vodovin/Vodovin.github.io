@@ -53,16 +53,8 @@ const siteConfig: SiteConfig = {
     ],
     socialLinks: [
         {
-            text: 'Dribbble',
-            href: 'https://dribbble.com/'
-        },
-        {
-            text: 'Instagram',
-            href: 'https://instagram.com/'
-        },
-        {
-            text: 'X/Twitter',
-            href: 'https://twitter.com/'
+            text: 'Linkedin',
+            href: 'www.linkedin.com/in/aitor-alarcon-ortega-932a653a9/'
         }
     ],
     hero: {
