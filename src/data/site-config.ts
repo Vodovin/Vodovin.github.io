@@ -6,11 +6,11 @@ const siteConfig: SiteConfig = {
     website: 'https://Vodovin.github.io',
     avatar: {
         src: avatar,
-        alt: 'Ethan Donovan'
+        alt: 'Aitor Alarcon'
     },
-    title: 'Dante',
-    subtitle: 'Minimal Astro.js theme',
-    description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
+    title: 'Aitor Alarcon',
+    subtitle: 'Computer Engineer and Video game developer',
+    description: 'Corner to talk about computer and videogames',
     image: {
         src: '/dante-preview.jpg',
         alt: 'Dante - Astro.js and Tailwind CSS theme'
@@ -29,8 +29,8 @@ const siteConfig: SiteConfig = {
             href: '/blog'
         },
         {
-            text: 'Tags',
-            href: '/tags'
+            text: 'Github',
+            href: '/https://github.com/Vodovin'
         }
     ],
     footerNavLinks: [
@@ -67,7 +67,7 @@ const siteConfig: SiteConfig = {
     ],
     hero: {
         title: 'Hi There & Welcome to My Corner of the Web!',
-        text: "I'm **Ethan Donovan**, a web developer at Amazing Studio, dedicated to the realms of collaboration and artificial intelligence.\nMy approach involves embracing intuition, conducting just enough research, and leveraging aesthetics as a catalyst for exceptional products.\nI have a profound appreciation for top-notch software, visual design, and the principles of product-led growth.\n\nFeel free to explore some of my coding endeavors on [GitHub](https://github.com/JustGoodUI/dante-astro-theme) or follow me on [Twitter/X](https://twitter.com/justgoodui).",
+        text: "I'm **Aitor Alarcon**, a developer and engineer driven by perseverance and a passion for becoming the best version of myself.\nI excel at innovation, problem-solving, and unlocking the full potential of software to maximize hardware performance.",
         image: {
             src: hero,
             alt: 'A person sitting at a desk in front of a computer'
