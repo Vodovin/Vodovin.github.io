@@ -1,5 +1,5 @@
-import avatar from '../assets/images/avatar.jpg';
-import hero from '../assets/images/hero.jpg';
+import avatar from '../assets/images/avatar0.jpeg';
+import hero from '../assets/images/about0.jpeg';
 import type { SiteConfig } from '../types';
 
 const siteConfig: SiteConfig = {
@@ -45,10 +45,6 @@ const siteConfig: SiteConfig = {
         {
             text: 'Terms',
             href: '/terms'
-        },
-        {
-            text: 'Download theme',
-            href: 'https://github.com/JustGoodUI/dante-astro-theme'
         }
     ],
     socialLinks: [

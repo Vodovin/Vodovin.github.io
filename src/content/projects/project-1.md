@@ -4,11 +4,11 @@ description: C implementation of a command interpreter with support for backgrou
 publishDate: 'May 15 2024'
 seo:
   image:
-    src: '../../assets/images/project-1.jpg'
+    src: '../../assets/images/project-1-0.png'
     alt: Project preview
 ---
 
-![Project preview](../../assets/images/project-1.jpg)
+![Project preview](../../assets/images/project-1-0.png)
 
 
 
