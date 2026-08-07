@@ -49,10 +49,10 @@ The main objective of the code architecture was to ensure readability and mainta
 
 ## Technology Stack
 
-- Frontend: React Native for cross-platform mobile app development.
-- Backend: Firebase for real-time data synchronization and user authentication.
-- Database: Firestore for scalable and flexible data storage.
-- AI Integration: Dialogflow for natural language processing and conversation with EcoEducator.
+- **Programming Language:** ANSI C for rigorous low-level system programming and dynamic memory management[cite: 14].
+- **Environment & OS:** UNIX/Linux ecosystem, leveraging POSIX APIs for direct operating system interaction[cite: 14].
+- **Process & Signal Control:** Core system calls (`fork`, `exec`, `wait`, `pipe`, `dup2`) for concurrent execution, IPC (Inter-Process Communication), and low-level signal handling (`SIGINT`, `SIGQUIT`).
+- **Parsing & Libraries:** Standard C libraries combined with a custom static parser library (`libparser.a`) to tokenize command-line inputs.
 
 ## Test Cases
 

@@ -1,6 +1,6 @@
 ---
-title: 'TimeWarp - Travel Agency Website'
-description: Explore the possibilities of time travel through an immersive website for a fictional travel agency, complete with dynamic destination timelines and interactive historical events.
+title: 'Minikernel - Operating System Extension'
+description: C implementation of kernel modifications to introduce multiprogramming, mutex-based synchronization, and Round-Robin scheduling in an educational operating system.
 publishDate: 'Oct 2 2023'
 isFeatured: true
 seo:
@@ -11,54 +11,46 @@ seo:
 
 ![Project preview](../../assets/images/project-2.jpg)
 
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
-
 **Project Overview:**
-TimeWarp Travel Agency aims to redefine the travel experience by offering an innovative and immersive online platform that explores the concept of time travel. The website combines cutting-edge technology with captivating storytelling to provide users with a unique journey through time.
+This project consists of modifying an initial version of a minikernel to include new functionalities and add multiprogramming capabilities.
 
-> Working with Ethan Donovan was a game-changer for our online presence. Their innovative solutions and attention to detail turned our vision into a reality. The website not only looks fantastic but also functions seamlessly. A true professional who exceeded our expectations!
+## Design Objectives
 
-## Objectives
+The main objective of the architecture modifications was to interact with an initial version of the minikernel that already included initialization, exception handling, and a basic system call infrastructure. The design changes focused on three core areas:
+*   **Interrupt Handling:** Modifying and completing the code related to external and software interrupt handling.
+*   **System Calls:** Adding new system calls by modifying kernel files (`kernel.c`, `kernel.h`, `llamsis.h`) and user libraries (`serv.c`, `servicios.h`) to implement the requested features.
+*   **Data Structures:** Adapting existing structures like the Process Control Block (BCP), the process table, and the ready queue to support the new Round-Robin scheduling algorithm and process blocking.
 
-1. Create a visually stunning and user-friendly website that captures the essence of time travel.
-2. Integrate interactive elements to engage users and make the experience memorable.
-3. Develop a responsive design to ensure a seamless user experience across various devices.
+## Main Features
 
-## Features
+1. **Process Blocking and Multiprogramming (Sleep):**
+   * Implementation of the `dormir` system call, allowing a process to voluntarily block itself for a specific period of time, giving the system multiprogramming characteristics.
+   * The Process Control Block (BCP) was modified to include a `tiempo_dormir` variable.
+   * A new list called `lista_dormidos` was created to store blocked processes.
+   * The clock interrupt routine was updated to decrease the sleep time of blocked processes and transition them back to the ready state once their time reaches zero.
 
-1. **Dynamic Destination Timelines:**
+2. **Mutex-based Synchronization:**
+   * Implementation of mutual exclusion for processes, supporting both recursive and non-recursive mutex types.
+   * A new `mutex_t` structure was defined, and the BCP was modified to include arrays of mutex descriptors.
+   * The system features a full suite of calls: `crear_mutex`, `abrir_mutex`, `lock`, `unlock`, and `cerrar_mutex`.
+   * Advanced blocking is handled when the system limit of available mutexes is reached, waking up blocked processes once a mutex is closed and freed.
+   * The kernel ensures the implicit release of all mutexes held by a process when it terminates.
 
-- Users can explore destinations through dynamic timelines, showcasing significant historical events, cultural developments, and architectural milestones.
-- Interactive sliders allow users to navigate through different eras, providing a visual representation of the historical evolution of each location.
-
-2. **Interactive Historical Events:**
-
-- Users can click on specific points in the timeline to reveal detailed information about key historical events related to the chosen destination.
-- Rich multimedia content, including images, videos, and articles, provides a comprehensive understanding of each event.
-
-3. **Personalized Time Travel Planner:**
-
-- A personalized planner feature enables users to create their time travel itineraries by selecting specific eras and destinations.
-- The system suggests thematic experiences, such as attending historical events or meeting famous personalities.
-
-4. **Time-Port Virtual Reality Experience:**
-
-- For an extra layer of immersion, users can opt for the Time-Port VR experience, allowing them to virtually step into different time periods and explore the surroundings in 360 degrees.
-
-5. **Chronicle Explorer Blog:**
-
-- A blog section, "Chronicle Explorer," offers in-depth articles and stories about various historical periods and their impact on the destinations featured on the platform.
-- Users can engage with the content, comment, and share their own historical insights.
+3. **Round-Robin Scheduling:**
+   * Replacement of the default FIFO scheduling algorithm with a Round-Robin approach.
+   * Time slices are defined by the `TICKS_POR_RODAJA` constant, introducing a `ticks_rodaja` variable to the BCP.
+   * To prevent synchronization issues, the kernel acts as non-preemptive; context switches are not allowed while a process is executing device handler routines or system calls.
+   * Context switching is managed via a non-preemptive software interrupt that moves the current process to the end of the ready queue once its time slice is consumed.
 
 ## Technology Stack
 
-- **Frontend:** [Astro.js](https://astro.build/) for a dynamic and responsive user interface and [Tailwind CSS](https://tailwindcss.com/) for styling.
-- **Backend:** Node.js for handling server-side logic and API integration.
-- **Database:** MongoDB for efficient storage and retrieval of historical data.
-- **VR Integration:** A-Frame framework for creating immersive virtual reality experiences.
+- **Programming Language:** C for low-level kernel development, data structure manipulation, and pointer arithmetic.
+- **Environment & OS:** Custom Minikernel architecture, handling direct hardware clock interrupts, software interrupts, and system call dispatching.
+- **Concurrency & Synchronization:** Development of custom synchronization primitives (Mutex), process state management, and CPU scheduling algorithms (Round-Robin).
 
-## Outcome
+## Test Cases
 
-The TimeWarp Travel Agency Website successfully brings the concept of time travel to life, providing users with a captivating and educational experience. The website not only serves as a travel planning tool but also as an interactive platform that encourages users to explore and appreciate the rich tapestry of human history.
-
-**Note:** This case study is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+The code was subjected to various tests via the `init.c` file to ensure its stability:
+* **Sleep functionality (`prueba_dormir`):** Tests two processes sleeping for 1 and 3 seconds respectively, verifying that they sleep for the correct number of ticks and wake up concurrently as expected.
+* **Mutex Validation (`prueba_mutex1` & `prueba_mutex2`):** Tests the creation, opening, and closing of mutexes, verifying system and process limits, and blocking processes when no system space is available. It also evaluates non-recursive vs. recursive locking, multiple lock/unlock sequences, and the correct implicit closure of mutexes upon process termination.
+* **Round-Robin Execution (`prueba_RR2`):** Verifies the scheduler by running 5 processes simultaneously alongside a "mudo" program that consumes CPU through arithmetic calculations without writing to the screen.
